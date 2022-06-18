@@ -8,7 +8,8 @@
 安装鲶鱼精邮差请自行进入鲶鱼精邮差[wiki page](https://github.com/Natsukage/PostNamazu/wiki)
 ## 使用方式:
 Triggernometry内选择远程触发器->添加->仓库
-仓库地址内复制黏贴
+
+仓库地址内复制黏贴: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR.xml
 
 ## 目前已支持功能:
 
