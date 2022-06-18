@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="434ae701-d7b4-4897-bb83-51e9fdcd68e5" Name="FindGrinnaux" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Sequential="True" Name="CallOutGrinnauxLocation" Id="c240f77c-d4f3-43fd-9a93-f731713c33df" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/p North &lt;se.6&gt;&lt;se.6&gt;&lt;se.6&gt;&lt;se.6&gt;" OBSEndPoint="" UseTTSTextExpression="North" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northX}" ExpressionTypeL="Numeric" ExpressionR="77" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].x}" ExpressionTypeL="Numeric" ExpressionR="91" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northX}" ExpressionTypeL="Numeric" ExpressionR="123" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].x}" ExpressionTypeL="Numeric" ExpressionR="109" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northY}" ExpressionTypeL="Numeric" ExpressionR="123" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].y}" ExpressionTypeL="Numeric" ExpressionR="109" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northY}" ExpressionTypeL="Numeric" ExpressionR="77" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].y}" ExpressionTypeL="Numeric" ExpressionR="91" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/p South &lt;se.7&gt;&lt;se.7&gt;&lt;se.7&gt;&lt;se.7&gt;" OBSEndPoint="" UseTTSTextExpression="South" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northX}" ExpressionTypeL="Numeric" ExpressionR="77" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].x}" ExpressionTypeL="Numeric" ExpressionR="109" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northX}" ExpressionTypeL="Numeric" ExpressionR="123" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].x}" ExpressionTypeL="Numeric" ExpressionR="91" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northY}" ExpressionTypeL="Numeric" ExpressionR="123" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].y}" ExpressionTypeL="Numeric" ExpressionR="91" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+              <ConditionGroup Enabled="true" Grouping="And">
+                <ConditionSingle Enabled="true" ExpressionL="${var:northY}" ExpressionTypeL="Numeric" ExpressionR="77" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:grinnauxID}].y}" ExpressionTypeL="Numeric" ExpressionR="109" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              </ConditionGroup>
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Source="FFXIVNetwork" Sequential="True" Name="catchGrinnauxID(keepDisabled)" Id="8992b27c-5ddd-4ca7-b34d-e459a7f39a47" RegularExpression="^03\|[^|]*\|(?&lt;grinnauxID&gt;[^|]*)\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|3639\|12602\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|108.00\|83.00\|" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="2000">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetString" VariableName="grinnauxID" VariableExpression="${grinnauxID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="8992b27c-5ddd-4ca7-b34d-e459a7f39a47" ActionType="Trigger" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="PureOfHeartCasting" Id="c7c3bc75-ba02-4fc3-a353-5ae26db913d5" RegularExpression="^20\|[^|]*\|[^|]*\|[^|]*\|62E4\|">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="EnableTrigger" TriggerId="8992b27c-5ddd-4ca7-b34d-e459a7f39a47" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" IsReadme="True" Name="Twisting Dive 1" Id="ff9d0252-b7e6-4fe0-b46f-b0a61dc8d5db" RegularExpression="^20\|[^|]*\|[^|]*\|[^|]*\|6B8B\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|(?&lt;x&gt;[^|]*)\|(?&lt;y&gt;[^|]*)\|" PeriodRefire="Deny" RefirePeriodExpression="1000" Description="Notify Team when Twisting dive resolve">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="northX" VariableExpression="${x}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="northY" VariableExpression="${y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="500">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="c240f77c-d4f3-43fd-9a93-f731713c33df" TriggerForce="regexp,active" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="5200">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" OBSEndPoint="" PlaySoundFileExpression="C:\Users\jason\AppData\Roaming\Advanced Combat Tracker\Plugins\garuda.mp3" UseTTSTextExpression="Twister" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="2000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="ff9d0252-b7e6-4fe0-b46f-b0a61dc8d5db" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Name="wipe" Id="13fdfe81-20cc-44f5-ac82-b6c9227402dd" RegularExpression="^33\|[^|]*\|[^|]*\|400000(?&gt;03|10)\|">
+        <Actions>
+          <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="EnableTrigger" TriggerId="ff9d0252-b7e6-4fe0-b46f-b0a61dc8d5db" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
