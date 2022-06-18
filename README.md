@@ -6,6 +6,9 @@
 严重依赖 鲶鱼精邮差 进行队员标点
 
 安装鲶鱼精邮差请自行进入鲶鱼精邮差[wiki page](https://github.com/Natsukage/PostNamazu/wiki)
+## 使用方式:
+Triggernometry内选择远程触发器->添加->仓库
+仓库地址内复制黏贴
 
 ## 目前已支持功能:
 
