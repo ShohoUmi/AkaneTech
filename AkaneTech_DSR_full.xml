@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedFolder Id="e66added-2249-43e8-a00d-8b0220a56c79" Name="茜茜绝龙诗指挥插件发布版" Enabled="false">
+  <ExportedFolder Id="e66added-2249-43e8-a00d-8b0220a56c79" Name="茜茜绝龙诗指挥插件发布版" Enabled="true">
     <Folders>
       <Folder Id="b67c22c1-412c-4de6-adf6-fed84c607118" Name="p3" Enabled="true">
         <Folders>
@@ -399,22 +399,19 @@
                   <Action OrderNumber="2" ListVariableOp="Remove" ListVariableName="dsrP2HeadMarker" ListVariableIndex="${lvar:dsrP2HeadMarker.indexof(${_ffxivparty[${name}].order})}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e StrengthAM" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                  <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="500">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="4" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="500">
+                  <Action OrderNumber="4" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8275c172-7887-47aa-9c24-528a08171ee1" TriggerForce="regexp" ActionType="Trigger">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8275c172-7887-47aa-9c24-528a08171ee1" TriggerForce="regexp" ActionType="Trigger">
+                  <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="125e039a-cc8a-4088-85c6-35382fe83f7a" TriggerForce="regexp" ActionType="Trigger">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="6" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="125e039a-cc8a-4088-85c6-35382fe83f7a" TriggerForce="regexp" ActionType="Trigger">
+                  <Action OrderNumber="6" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="5000">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="5000">
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Action>
-                  <Action OrderNumber="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="d3f06ca6-a416-48bd-8f86-bae1c45a1ef7" ActionType="Trigger">
+                  <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="d3f06ca6-a416-48bd-8f86-bae1c45a1ef7" ActionType="Trigger">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
