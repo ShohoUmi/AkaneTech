@@ -57,8 +57,6 @@ Triggernometry内选择远程触发器->添加->仓库
 
 ## To Do:
 ### P2 托尔丹:
-#### Strength of the Ward 一运:
-可能增加蓝圈点名优先级自动标点，分摊踩塔优先级自动标点
 #### Sanctity of the Ward 二运:
 可能增加龙眼位置检测
 ### P3 尼德霍格:
