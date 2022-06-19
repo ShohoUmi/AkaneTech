@@ -550,6 +550,15 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
+              <Trigger Enabled="true" Source="FFXIVNetwork" Name="SanctityOfTheWardCast" Id="56825983-a8a1-46d8-89b5-ee712976ba58" RegularExpression="^20\|[^|]*\|[^|]*\|[^|]*\|63E1\|">
+                <Actions>
+                  <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="5e0258f4-6a9f-4923-8b5e-40f6a692a2a8" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
             </Triggers>
           </Folder>
         </Folders>
