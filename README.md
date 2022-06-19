@@ -11,6 +11,21 @@ Triggernometry内选择远程触发器->添加->仓库
 
 仓库地址内复制黏贴: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_full.xml
 
+##### “如果我只想用某一个功能怎么办?”
+已经上传了每个机制单独的trigger,请只添加您需要的仓库地址:
+
+P2一运: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_StrengthAM.xml
+
+P3一运: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_DiveFromGrace.xml
+
+P4: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_DragonEye.xml
+
+P5一运: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_WotH.xml
+
+P5二运: https://raw.githubusercontent.com/ShohoUmi/AkaneTech/main/AkaneTech_DSR_DotH.xml
+
+每个Trigger的具体功能可以看下方说明
+
 ## 目前已支持功能:
 
 ### P2 骑神托尔丹
