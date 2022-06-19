@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="9907c230-9350-4fb8-b5b8-0ae4244c9b85" Name="茜茜绝龙诗P3一运" Enabled="true">
+    <Folders>
+      <Folder Id="ffc1e52d-c279-4313-ac3c-752bf63e223c" Name="p3" Enabled="true">
+        <Folders>
+          <Folder Id="8d7f5a80-d214-4125-ba9b-072b003f94c3" Name="箭头处理(请根据打法选择)" Enabled="true">
+            <Folders>
+              <Folder Id="c502e5cd-e68f-4cd0-a302-23407124f8d8" Name="取消标记" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="取消bind" Id="5b6cc499-7978-47db-8c64-12ff70961204" RegularExpression="">
+                    <Actions>
+                      <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;bind1&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;bind2&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;bind3&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="取消ignore" Id="17b1c5b6-7e2d-42ea-addd-122eb8036408" RegularExpression="">
+                    <Actions>
+                      <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;stop1&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;stop2&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="取消attack" Id="0eec992e-5b77-47a8-abdc-b3ec3fe6b6b3" RegularExpression="">
+                    <Actions>
+                      <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;attack1&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;attack2&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;attack3&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                </Triggers>
+              </Folder>
+            </Folders>
+            <Triggers>
+              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="ElusiveJump" Id="d6ecc3e3-a1bb-4358-b50d-50ad2b15d6ca" RegularExpression="^26\|[^|]*\|AC5\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|(?&lt;name&gt;[^|]*)\|" Description="标记上箭头为攻击1/止步1/禁止1">
+                <Actions>
+                  <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="0eec992e-5b77-47a8-abdc-b3ec3fe6b6b3" TriggerForce="regexp,conditions,active" ActionType="Trigger">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:firstInLine[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:firstInLine[3]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:firstInLine[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="17b1c5b6-7e2d-42ea-addd-122eb8036408" TriggerForce="regexp,conditions,active" ActionType="Trigger" ExecutionDelayExpression="20">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:secondInLine[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:secondInLine[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="5b6cc499-7978-47db-8c64-12ff70961204" TriggerForce="regexp,conditions,active" ActionType="Trigger" ExecutionDelayExpression="20">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:thirdInLine[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:thirdInLine[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:thirdInLine[3]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                </Condition>
+                <Conditions />
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="e5b359bd-69af-4602-8fd5-c18cfab36bd5" Name="Prios" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Third in Line" Id="5fc7339a-7f59-45c7-a693-5b77240b348c" RegularExpression="^26\|[^|]*\|BBE\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|(?&lt;name&gt;[^|]*)\|">
+                <Actions>
+                  <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[1]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[2]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[3]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[3]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[4]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[4]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[5]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[5]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[6]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[6]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[7]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[7]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${lvar:dsrPrio[8]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[8]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="thirdInLine" ListVariableExpression="${_ffxivparty[${name}].order}" OBSEndPoint="" VariableOp="SetString" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="First In line" Id="2c0b9f87-e86d-42fc-bdf3-4decdd0d2a0a" RegularExpression="^26\|[^|]*\|BBC\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|(?&lt;name&gt;[^|]*)\|">
+                <Actions>
+                  <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[1]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[2]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[3]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[3]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[4]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[4]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[5]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[5]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[6]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[6]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[7]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[7]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${lvar:dsrPrio[8]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[8]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="firstInLine" ListVariableExpression="${_ffxivparty[${name}].order}" OBSEndPoint="" VariableOp="SetString" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Second in Line" Id="983b12d7-16f3-48ef-8b92-809d8f725078" RegularExpression="^26\|[^|]*\|BBD\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|(?&lt;name&gt;[^|]*)\|">
+                <Actions>
+                  <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[1]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="110" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[1]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[2]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[2]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[3]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[3]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[4]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[4]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[5]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[5]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[6]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[6]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[7]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[7]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" KeypressType="WindowMessage" KeyPressCode="118" KeyPressWindow="Final Fantasy XIV" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${lvar:dsrPrio[8]}&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${name}].order}" ExpressionTypeL="Numeric" ExpressionR="${lvar:dsrPrio[8]}" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="secondInLine" ListVariableExpression="${_ffxivparty[${name}].order}" OBSEndPoint="" VariableOp="SetString" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="enrage casting clear markers" Id="5cce3db6-854a-43c5-8d21-3336de7dfad4" RegularExpression="^20\|[^|]*\|[^|]*\|[^|]*\|7436\|">
+            <Actions>
+              <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8a144692-515e-4e42-a369-a42bf4c002d7" TriggerForce="regexp,conditions,active" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="And" />
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Ultimate End clear markers" Id="12264e1f-c773-45cd-be7a-afb519d1d535" RegularExpression="^21\|[^|]*\|[^|]*\|[^|]*\|63BD\|">
+            <Actions>
+              <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8a144692-515e-4e42-a369-a42bf4c002d7" TriggerForce="regexp,conditions,active" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="748281d8-863f-46dd-abea-44d4f428f71d" Name="WipeReset" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Wipe" Id="59822727-0b2e-492d-95a3-ae72f2353433" RegularExpression="^33\|[^|]*\|[^|]*\|400000(?&gt;03|10)\|">
+            <Actions>
+              <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="EndEncounter">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="c1767632-9a02-48b0-bb02-305c06aacfb8" TriggerForce="regexp" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" ListVariableName="firstInLine" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" ListVariableName="secondInLine" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="5" ListVariableName="thirdInLine" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="6" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Placeholder" ExecutionDelayExpression="3000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="7" KeypressType="WindowMessage" KeyPressCode="121" KeyPressWindow="Final Fantasy XIV" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8a144692-515e-4e42-a369-a42bf4c002d7" TriggerForce="regexp,conditions,active" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="true" Sequential="True" Name="clear All markers" Id="8a144692-515e-4e42-a369-a42bf4c002d7" RegularExpression="">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;1&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;2&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;3&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;4&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;5&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;6&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;7&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk clear &lt;8&gt;" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers>
+      <Trigger Enabled="true" Sequential="True" Name="!!!设置优先级!!!" Id="c1767632-9a02-48b0-bb02-305c06aacfb8" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" ListVariableName="dsrPrio" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="上下移动其他action，优先级从高到低 (不要动这个)" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第一位&lt;1&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="2" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第二位&lt;2&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第三位&lt;3&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="4" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第四位&lt;4&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第五位&lt;5&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="7" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="6" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第六位&lt;6&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="8" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第七位&lt;7&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="9" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="dsrPrio" ListVariableExpression="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Description="小队列表第八位&lt;8&gt;" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" IsReadme="True" Name="!!!ReadMe!!!" Id="0de7b3b1-3050-46cf-9c92-b93fe8a1d2ac" RegularExpression="" Description="请先进入!!!设置优先级!!!内按照队伍列表设置优先级">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
